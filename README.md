@@ -14,7 +14,7 @@ git clone git://github.com/sergeyklay/phpenv-config-add.git "$(phpenv root)/plug
 ## Usage
 
 ```sh
-phpenv config-add <config-name>
+phpenv config-add <path-to-config>
 phpenv config-rm <config-name>
 ```
 
