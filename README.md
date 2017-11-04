@@ -1,4 +1,4 @@
-# `phpenv-pear-setup`
+# `phpenv-config-add`
 
 It's a [phpenv/phpenv](https://github.com/hisayan/phpenv) plugin to enable/disable configs.
 
