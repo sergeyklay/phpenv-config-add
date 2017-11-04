@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+
+set -e
+
+[ -n "$PHPENV_DEBUG" ] && set -x
+
+PHPENV_ROOT="${PHPENV_ROOT:-$(phpenv root)}"
+PHPENV_VERSION_NAME="$(phpenv-version-name)"
+PHPENV_CONFIG_PATH="${PHPENV_ROOT}/versions/${PHPENV_VERSION_NAME}/etc/conf.d"
+
+# Provide phpenv completions
+if [ "$1" = "--complete" ]; then
+  exec ls "$PHPENV_CONFIG_PATH"
+fi
+
+PHPENV_CONFIG_FILE=$1
+
+if [ -f "$PHPENV_CONFIG_PATH/$PHPENV_CONFIG_FILE" ]; then
+  rm "$PHPENV_CONFIG_PATH/$PHPENV_CONFIG_FILE"
+  echo "File $PHPENV_CONFIG_FILE removed from $PHPENV_CONFIG_PATH."
+else
+  echo "File $PHPENV_CONFIG_FILE does no exist."
+  exit 1
+fi
