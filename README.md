@@ -14,8 +14,8 @@ git clone git://github.com/sergeyklay/phpenv-config-add.git "$(phpenv root)/plug
 ## Usage
 
 ```sh
-phpenv config-add <path-to-config>
-phpenv config-rm <config-name>
+phpenv config-add /path/to/config.ini
+phpenv config-rm config.ini || true
 ```
 
 ## License
